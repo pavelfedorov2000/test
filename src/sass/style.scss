@@ -1,0 +1,99 @@
+@import 'base/vars';
+@import 'base/mixins';
+
+* {
+   box-sizing: inherit;
+    &:before, &:after {
+        box-sizing: inherit;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    //font-family: ;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-width: 320px;
+    background: #E5E5E5;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding: 80px 0 100px;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 0.03em;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 30px;
+    &--mb35 {
+        margin-bottom: 35px;
+    }
+}
+
+.text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 45px;
+    background: $accent;
+    border-radius: 2px;
+    font-family: 'Commissioner', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+
+@import 'blocks/header';
+@import 'blocks/main';
+//@import 'blocks/benefits';
+//@import 'blocks/form';
+//@import 'blocks/slider';
+@import 'blocks/footer';
+
+//@import 'base/media';
