@@ -22,7 +22,7 @@
     font-style: normal;
 }
 
-/* @font-face {
+@font-face {
     font-family: 'Lato';
     src: url('Lato-Medium.eot');
     src: local('Lato Medium'), local('Lato-Medium'),
@@ -31,7 +31,7 @@
         url('Lato-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
-} */
+}
 
 @font-face {
     font-family: 'Lato';
