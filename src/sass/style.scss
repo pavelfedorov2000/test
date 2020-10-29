@@ -186,6 +186,12 @@ img {
     text-transform: uppercase;
     color: #FFFFFF;
     @include btn;
+    transition: .3s all;
+    &:hover {
+        border: 2px solid $accent;
+        background-color: #ffffff;
+        color: $accent;
+    }
 }
 
 .price {

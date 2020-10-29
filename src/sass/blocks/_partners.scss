@@ -94,8 +94,11 @@
         @include btn;
         background-color: transparent;
         border: 2px solid $accent;
-        border-radius: 2px;
         color: $accent;
+        &:hover {
+            background-color: $accent;
+            color: #ffffff
+        }
     }
     &__logos {
         @include around;
