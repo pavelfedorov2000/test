@@ -31,7 +31,7 @@ gulp.task('styles', function() {
                 cascade: true
         }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest("dist/css"))
+        .pipe(gulp.dest("src/css"))
         .pipe(browserSync.stream());
 });
 
@@ -48,6 +48,11 @@ gulp.task('html', function() {
     return gulp.src('src/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('css', function() {
+    return gulp.src('src/css/*.css')
+        .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('scripts', function() {
@@ -85,4 +90,4 @@ gulp.task('images', function() {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'fonts', 'vendors', 'icons', 'logo', 'images'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'css', 'scripts', 'fonts', 'vendors', 'icons', 'logo', 'images'));
