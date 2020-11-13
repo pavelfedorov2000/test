@@ -8,6 +8,7 @@ var gulp         = require('gulp'),
     rename       = require('gulp-rename'),
     del          = require('del'),
     imagemin     = require('gulp-imagemin'),
+    pngquant     = require('imagemin-pngquant'),
     htmlmin      = require('gulp-htmlmin');
 
 gulp.task('server', function() {
@@ -72,11 +73,23 @@ gulp.task('vendors', function() {
 
 gulp.task('icons', function() {
     return gulp.src('src/icons/**/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()],
+            interlaced: true
+        }))
         .pipe(gulp.dest('dist/icons'));
 });
 
 gulp.task('logo', function() {
     return gulp.src('src/logo/**/*')
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()],
+            interlaced: true
+        }))
         .pipe(gulp.dest('dist/logo'));
 });
 
@@ -85,6 +98,7 @@ gulp.task('images', function() {
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()],
             interlaced: true
         }))
         .pipe(gulp.dest('dist/img'));

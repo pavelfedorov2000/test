@@ -12,7 +12,7 @@
     &__list-num {
         width: 70px;
         height: 70px;
-        border-radius: 75%;
+        border-radius: 75%; // не хочет скругляться полностью (не указан радиус)
         border: 1px solid rgba(222, 195, 119, 0.75);
         margin-right: 30px;
         span {
@@ -24,6 +24,9 @@
     }
     &__list-text {
         font-weight: 400;
+    }
+    &__text {
+        letter-spacing: 0.01em;
     }
 }
 
@@ -65,6 +68,7 @@
     }
     &__politics {
         font-weight: 700;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     }
     &__btn {
         width: 100%;
