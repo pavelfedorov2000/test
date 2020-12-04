@@ -1,18 +1,16 @@
 @mixin flex {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-@mixin around {
-    @include flex;
-    justify-content: space-around;
 }
 @mixin center {
-    @include flex;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
+
 @mixin btn {
     border: none;
     outline: none;
+    padding: 0;
     cursor: pointer;
 }

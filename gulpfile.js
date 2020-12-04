@@ -6,9 +6,6 @@ var gulp         = require('gulp'),
     cleanCSS     = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
     rename       = require('gulp-rename'),
-    del          = require('del'),
-    imagemin     = require('gulp-imagemin'),
-    pngquant     = require('imagemin-pngquant'),
     htmlmin      = require('gulp-htmlmin');
 
 gulp.task('server', function() {
@@ -41,10 +38,6 @@ gulp.task('watch', function() {
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
 });
 
-gulp.task('clean', function() {
-    return del.sync('dist');
-});
-
 gulp.task('html', function() {
     return gulp.src('src/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
@@ -61,47 +54,9 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('fonts', function() {
-    return gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest('dist/fonts'));
-});
-
 gulp.task('vendors', function() {
     return gulp.src('src/vendors/**/*')
         .pipe(gulp.dest('dist/vendors'));
 });
 
-gulp.task('icons', function() {
-    return gulp.src('src/icons/**/*')
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()],
-            interlaced: true
-        }))
-        .pipe(gulp.dest('dist/icons'));
-});
-
-gulp.task('logo', function() {
-    return gulp.src('src/logo/**/*')
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()],
-            interlaced: true
-        }))
-        .pipe(gulp.dest('dist/logo'));
-});
-
-gulp.task('images', function() {
-    return gulp.src('src/img/**/*')
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()],
-            interlaced: true
-        }))
-        .pipe(gulp.dest('dist/img'));
-});
-
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'css', 'scripts', 'fonts', 'vendors', 'icons', 'logo', 'images'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'css', 'scripts', 'vendors'));

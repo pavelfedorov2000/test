@@ -1,0 +1,107 @@
+.form-section {
+    height: 100vh;
+    padding-top: 30vh;
+    &__inner {
+        width: 100%;
+    }
+    &__title {
+        color: #ffffff;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
+.form {
+    display: flex;
+    width: 50%;
+    height: 40px;
+    margin: 0 auto;
+    &__input {
+        width: 70%;
+        height: 100%;
+        background-color: rgba(gray, .7);
+        padding: 0 20px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: gray;
+        outline: none;
+        &::placeholder {
+            color: gray;
+            transform: skewX(25deg);
+        }
+    }
+    &__btn {
+        width: 30%;
+        background-color: rgba($red, .8);
+        @include center;
+        color: #ffffff;
+        text-transform: uppercase;
+        font-weight: 500;
+        @include btn;
+        transition: .3s all;
+        div {
+            transform: skewX(25deg);
+        }
+        &:hover {
+            background-color: $red;
+        }
+    }
+    &__input, &__btn {
+        height: 100%;
+        transform: skewX(-25deg);
+        border: 1px solid #ffffff;
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0, .56);
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    min-height: 140px;
+    background-color: #f2f2f2;
+    padding: 38px 40px 40px 40px;
+    &__close {
+        position: absolute;
+        top: 0;
+        right: -40px;
+        font-size: 41px;
+        line-height: 15px;
+        color: $red;
+        cursor: pointer;
+    }
+    &__subtitle {
+        color: #0d0d0d;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+    }
+    &__descr {
+        color: #0d0d0d;
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 11px;
+        text-align: center;
+    }
+    .error {
+        border: 1px solid red;
+    }
+    label.error {
+        border: none;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}

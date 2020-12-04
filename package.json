@@ -1,5 +1,5 @@
 {
-  "name": "pulse",
+  "name": "test_form",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,11 +16,8 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "^2.3.0",
-    "gulp-imagemin": "^7.1.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
-    "imagemin-pngquant": "^9.0.1",
-    "rigger": "^1.0.1"
+    "gulp-sass": "^4.1.0"
   },
   "browserslist": [
     "last 10 versions",
